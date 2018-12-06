@@ -1,0 +1,40 @@
+extends layout
+
+block content
+  include ui/header
+  .-svg-logo
+    include ui/logo/logo-no-text
+  #container._flex_v
+    .contact-list
+      for i in contact
+        .-contact-item
+          span.-contact-info #{i.title}
+          span.-contact-title : #{i.content}
+
+    form#commentForm.cmxform(action='' target='frame')
+      .-cover._flex_v_h
+        h3 Your order has been submitted
+        p Check out more about Nectar
+        a.-btn(href="/about") About Nectar
+      fieldset
+        div.form-legend Enter your contact details below and we'll can back in touch with you. Other-wise get in touch with us via phone or email.
+        p
+          label(for='name') Name:
+            span (required, at least 2 characters)
+          input#name-input(name='name', minlength='2', type='text', required='')
+        p
+          label(for='phone') E-Mail:
+            span (required)
+          input#email-input(type='email', name='email', required='')
+        p
+          label(for='email') Phone:
+          input#phone-input(type='phone', name='phone')
+        p
+          label(for='subject') Your order:
+            span (required)
+          textarea#subject-input(name='subject', required='')
+        p
+          input#send.-btn.btn(type='submit', value='Send')
+
+  iframe(frame='frame')
+  include ui/footer

@@ -1,0 +1,1 @@
+{"version":3,"names":[],"mappings":"","sources":["products.js"],"sourcesContent":["$(() => {\r\n    index_clicks();\r\n    show_menu_icon();\r\n});"],"file":"products1532528696425.js"}

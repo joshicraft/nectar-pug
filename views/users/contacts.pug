@@ -1,0 +1,54 @@
+extends admin-layout
+
+block content
+  p
+    button.m-2.btn.btn-primary(type='button', data-toggle='collapse', data-target='#add', aria-expanded='false', aria-controls='add') Add a Contact
+    button.m-2.btn.btn-primary(type='button', data-toggle='collapse in', data-target='#show', aria-expanded='false', aria-controls='show') Show all Contacts
+
+  #add.collapse.mb-4
+    .card.card-body
+      h2 Add Contact
+      p Fill out the form below
+      form.p-2.mb-4(method="post", action="/users/contacts")
+        .form-group
+          label Name
+          input.form-control(type="text", name="name", placeholder="Enter the contact name here...")
+        .form-group
+          label Mobile
+          input.form-control(type="text", name="mobile", placeholder="Drop the sale title in here. e.g. 30% Off!")
+        .form-group
+          label Email
+          input.form-control(type="text", name="email", placeholder="Drop the sale value in here. e.g. 30")
+        .form-group
+          label Address
+          input.form-control(type="text", name="address", placeholder="Drop the sale value in here. e.g. 30")
+        button.btn.btn-default(type="submit") Submit
+
+  #show.collapse.show
+    .card.card-body
+      table.table.table-dark
+        h2 Contact List
+        thead
+          tr
+            th(scope='col') #
+            th(scope='col') Name
+            th(scope='col') Phone
+            th(scope='col') Email
+            th(scope='col') Address
+            th(scope='col')
+            th(scope='col')
+
+        tbody
+          each contact, index in contacts
+            tr
+              th(scope='row') #{index + 1}
+              td #{contact.name}
+              td #{contact.phone}
+              td #{contact.email}
+              td #{contact.address}
+              td Delete
+              td Edit
+
+
+
+

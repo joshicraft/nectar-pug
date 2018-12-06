@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  ._full
+    ._title
+      h1= message
+      h1= success
+      h1= error_msg
+      h2= error.status
+      p #{error.stack}

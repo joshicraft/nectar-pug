@@ -1,0 +1,1 @@
+{"version":3,"names":[],"mappings":"","sources":["stockist.js"],"sourcesContent":["let map;\r\n\r\n$(() => {\r\n    let data,\r\n        map;\r\n\r\n    $.get('/stockist/map')\r\n        .done((res) => {\r\n            data = res;\r\n            map = new google.maps.Map(document.getElementById('map-1'), data.CONFIG);\r\n        });\r\n\r\n});"],"file":"stockist1532526797540.js"}

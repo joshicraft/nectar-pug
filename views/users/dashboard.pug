@@ -1,0 +1,33 @@
+extends admin-layout
+
+block content
+  h1 Dashboard
+  p Welcome #{user}
+  .row
+    .col-sm-4.mb-4
+      .card
+        .card-body
+          h5.card-title Contacts
+          p.card-text A list of the different contact information we have that's associated with Nectar
+          a.btn.btn-primary(href="/users/contacts") Contacts
+
+    .col-sm-4.mb-4
+      .card
+        .card-body
+          h5.card-title Stockists
+          p.card-text A list Stockists who currently have our drinks on their shelves
+          a.btn.btn-primary(href="/users/stockists") Stockists
+
+    .col-sm-4
+      .card
+        .card-body
+          h5.card-title Products
+          p.card-text The range of products that Nectar currently has available
+          a.btn.btn-primary(href="/users/products") Products
+
+    .col-sm-4
+      .card
+        .card-body
+          h5.card-title Partners
+          p.card-text Companies we're collaborating with or are in joint ventures with us.
+          a.btn.btn-primary(href="/users/partners") Partners

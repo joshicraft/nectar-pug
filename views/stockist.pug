@@ -1,0 +1,14 @@
+extends layout.pug
+block content
+  include ui/header
+  include errors/development
+  ._full
+    ._flex_h
+      .map(id='map-1')
+      .map-menu
+        .-menu-arrow
+          include ui/icons/down-arrow
+        h2.map-title Stockists
+        each val in stockists
+          h3._map-title #{val.title}
+  include ui/footer

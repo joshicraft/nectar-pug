@@ -1,0 +1,18 @@
+extends admin-layout
+
+block content
+  .col-lg-12
+    h1 Login
+    p Enter your account details below
+    form.col-sm-6(method="post", action="/users/login")
+      .form-group
+        label Username
+        |
+        input.form-control(type="text", name="username", placeholder="Username")
+      |
+      .form-group
+        label Password
+        |
+        input.form-control(type="password", name="password", placeholder="Password")
+      |
+      button.btn.btn-default(type="submit") Submit

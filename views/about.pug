@@ -1,0 +1,25 @@
+extends layout
+
+mixin about_content(data)
+    each val, index in data
+      - var align_class = "_flex_" + (index %2 == 0 ? 'reverse' : '');
+      section._col(class=val.title)
+        ._col-title
+        ._col-content._flex(class=align_class)
+          ._col-img._col-item
+            if val.svg
+              include ui/icons/label-back
+            else
+              ._img-bg(style='background-image: url(' + val.image + ');')
+          ._col-copy._col-item._flex_v_h_r
+            div._wrapper
+              h1 #{val.title}
+              p #{val.copy}
+
+block content
+  include ui/header
+  ._about-content
+    ._wrapper.-title
+      include ui/icons/label
+    +about_content(data)
+  include ui/footer

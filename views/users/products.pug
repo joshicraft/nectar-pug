@@ -1,0 +1,52 @@
+extends admin-layout
+
+block content
+  p
+    button.m-2.btn.btn-primary(type='button', data-toggle='collapse', data-target='#add', aria-expanded='false', aria-controls='add') Add a Product
+    button.m-2.btn.btn-primary(type='button', data-toggle='collapse', data-target='#show', aria-expanded='false', aria-controls='show') Show all Products
+
+  #add.collapse.mb-4
+    .card.card-body
+      h2 Add Product
+      p Fill out the form below
+      form.p-2.mb-4(method="post", action="/users/products")
+        .form-group
+          label Name
+          input.form-control(type="text", name="name", placeholder="Enter the product name here...")
+        .form-group
+          label Price
+          input.form-control(type="number", name="price", placeholder="Enter the price here e.g. $10.50")
+        .form-group
+          label Sale
+          input.form-control(type="text", name="sale-title", placeholder="Drop the sale title in here. e.g. 30% Off!")
+        .form-group
+          label Value
+          input.form-control(type="number", name="sale-value", placeholder="Drop the sale value in here. e.g. 30")
+        button.btn.btn-default(type="submit") Submit
+
+  #show.collapse.show
+    .card.card-body
+      table.table.table-dark
+        h2 Product List
+        thead
+          tr
+            th(scope='col') #
+            th(scope='col') Name
+            th(scope='col') Price
+            th(scope='col') Sale
+            th(scope='col')
+            th(scope='col')
+
+        tbody
+          each product, index in products
+            tr
+              th(scope='row') #{index + 1}
+              td #{product.name}
+              td $#{product.price}
+              td #{product.sale}
+              td Delete
+              td Edit
+
+
+
+

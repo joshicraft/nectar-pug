@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  include ui/header
+  ._full
+    .-scroll-arrow
+      include ui/icons/down-arrow
+    ._full._flex_v_h_r
+      .logo._flex_v_h_r
+        include ui/logo/logo
+
+  ._full
+    ._full._flex_v_h_r._relative._hide_flow
+      ._title
+        h1 If you're looking for Natural, Fresh, Delicious and Kiwi Made Beverage's. Look no further!
+        p Nectar Beverages has just hit Dairies, Artisan Food Stores and Cafes around NZ. If you'd like to get your hands on one of our delicious drinks — get in touch with the helpful team at Nectar :)
+        ._flex_h
+          a.-btn(href='/contact') CONTACT
+          a.-btn(href='/about') NECTAR
+      .-img-wrapper
+  include ui/footer
+
+
+

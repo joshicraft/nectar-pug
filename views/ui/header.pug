@@ -1,0 +1,25 @@
+//extends ../layout
+
+mixin menu-icon(name, href)
+  a.-menu-icon(class=name + '-icon', href=href)
+    .-icon-name._flex_v_h
+      p #{name.toUpperCase()}
+
+    if block
+      block
+block append header
+  header
+    .wrapper
+      include icons/menu
+      .page-icons
+        +menu-icon('home', '/')
+          include icons/home
+        +menu-icon('about', '/about')
+          include icons/about
+      .menu-icons
+        +menu-icon('contact', '/contact')
+          include icons/contact
+        +menu-icon('facebook', social_media.facebook.link)
+          include icons/facebook
+        +menu-icon('instagram', social_media.instagram.link)
+          include icons/instagram

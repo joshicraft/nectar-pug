@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  include ui/header
+  ._full._flex_v_h_r
+    ._title
+      h1 Our range of delicious products.
+      p Check out our prices and get in touch!
+
+      ._flex_v_h_r._card
+        ._heading
+          p Title:
+          p Price:
+          p Description:
+        for i in data
+          ._values
+            p #{i.title}
+            p #{i.price}
+            p #{i.description}
+
+
+
+  include ui/footer

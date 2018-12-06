@@ -1,0 +1,65 @@
+extends admin-layout
+
+block content
+  p
+    button.m-2.btn.btn-primary(type='button', data-toggle='collapse', data-target='#add', aria-expanded='false', aria-controls='add') Add a Partner
+    button.m-2.btn.btn-primary(type='button', data-toggle='collapse', data-target='#show', aria-expanded='false', aria-controls='show') Show all partners
+
+  #add.collapse.mb-4
+    .card.card-body
+      h2 Add Partner
+      p Fill out the form below
+      form.p-2.mb-4(method="post", action="/users/partners")
+        .form-group
+          label Name
+          input.form-control(type="text", name="name", placeholder="Enter the partners name here...")
+        .form-group
+          label Address
+          input.form-control(type="text", name="address", placeholder="Enter their address here e.g. 123 Test Street, Clevedon, Auckland")
+        .form-group
+          label Website
+          input.form-control(type="text", name="website", placeholder="Enter their website here e.g. www.partner.com")
+        .form-group
+          label Phone
+          input.form-control(type="text", name="phone", placeholder="Enter their contact number here e.g. +64 123 4567")
+        .form-group
+          label Bio
+          textarea.form-control(name="bio", placeholder="The copy that will be displayed on the website describing our partners")
+        .form-group
+          label Image
+          input.form-control(type="text", name="image", placeholder="URL pointing to an image we want displayed for them")
+
+        button.btn.btn-default(type="submit") Submit
+
+  #show.collapse.show
+    .card.card-body
+      table.table.table-dark
+        h2 Partner List
+        thead
+          tr
+            th(scope='col') #
+            th(scope='col') Name
+            th(scope='col') Address
+            th(scope='col') Website
+            th(scope='col') Phone
+            th(scope='col') Bio
+            th(scope='col') Image
+            th(scope='col')
+            th(scope='col')
+
+        tbody
+          each partner, index in partners
+            tr
+              th(scope='row') #{index + 1}
+              td #{partner.name}
+              td #{partner.address}
+              td #{partner.website}
+              td #{partner.phone}
+              td #{partner.bio}
+              td #{partner.image}
+              td Delete
+              td Edit
+
+
+
+

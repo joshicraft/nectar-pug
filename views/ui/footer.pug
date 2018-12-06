@@ -1,0 +1,30 @@
+//extends ../layout
+
+mixin menu-icon(name, href)
+  a.-menu-icon(class=name + '-icon', href=href)
+    if block
+      block
+
+block append footer
+  footer
+    .wrapper._flex
+      .-contact-list._footer-item
+        each val in contact
+          div
+            li
+              span #{val.title}:
+              span &nbsp;#{val.content}
+      .-social-media-list._flex_h._footer-item
+        div
+          +menu-icon('contact', '/contact')
+            include icons/contact
+        div
+          +menu-icon('facebook', social_media.facebook.link)
+            include icons/facebook
+        div
+          +menu-icon('instagram', social_media.instagram.link)
+            include icons/instagram
+      .-footer-extras._footer-item
+        .extra © 2018 Nectar Beverages LTD
+        a.new-a.extra(href='/privacy-policy') &bull;&nbsp;&nbsp; Privacy Policy
+        a.new-a.extra(href='/privacy-policy') &bull;&nbsp;&nbsp; Terms and Conditions

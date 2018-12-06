@@ -1,0 +1,67 @@
+doctype html
+html
+  head
+    title= title
+    meta(name='description', content=description)
+    meta(name='keywords', content='Drink, Fresh, Tea, Peach, Extract Drink, NZ, New Zealand, Cool, Retail, Retailer, Stockist')
+    link(rel='apple-touch-icon', sizes='180x180', href='/images/ico/apple-touch-icon.png')
+    link(rel='icon', type='image/png', sizes='32x32', href='/images/ico/favicon-32x32.png')
+    link(rel='icon', type='image/png', sizes='16x16', href='/images/ico/favicon-16x16.png')
+    link(rel='manifest', href='/images/ico/site.webmanifest')
+    link(rel='mask-icon', href='/images/ico/safari-pinned-tab.svg', color='#575757')
+    link(rel='shortcut icon', href='/images/ico/favicon.ico')
+    meta(name='msapplication-TileColor', content='#f6f6f6')
+    meta(name='msapplication-config', content='/images/ico/browserconfig.xml')
+    meta(name='theme-color', content='#f5f5f5')
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+
+    script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-120293126-2')
+    script(type="text/javascript").
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+          dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'UA-120293126-2');
+
+    script(type="text/javascript").
+        window.smartlook || (function (d) {
+            var o = smartlook = function () {
+                o.api.push(arguments)
+            }, h = d.getElementsByTagName('head')[0];
+            var c = d.createElement('script');
+            o.api = new Array();
+            c.async = true;
+            c.type = 'text/javascript';
+            c.charset = 'utf-8';
+            c.src = 'https://rec.smartlook.com/recorder.js';
+            h.appendChild(c);
+        })(document);
+        smartlook('init', '5161746db290c33f0d6ebb10c824ba63dc4c4a81');
+    //- stylesheets:css
+    link(media="all" rel="stylesheet", href="/stylesheets/stylesheet1535675536338.css")
+    //- endinject
+    //- scripts:js
+    script(defer="async" type="text/javascript", src="/js/c-libs1535675536338.min.js")
+    //- endinject
+
+
+body
+
+  ._full_view_port(id=page)
+
+    block content
+    a#home-button(href="/")
+      .wrapper
+        include ui/logo/logo-no-text
+  if page === 'stockist'
+    script(defer="async" type="text/javascript", src="https://maps.googleapis.com/maps/api/js?key=" + "AIzaSyC312ovnREe0oTtEJ5bcfL2guVwBIi00_8" + "&callback=initMap")
+
+  //- page-script:js
+  script(defer="async" type="text/javascript", src="/js/pages/" + page +"1535675536338.min.js")
+  //- endinject
+
+
+
